@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, ScrollView, FlatList } from 'react-native';
 import { Feather } from "@expo/vector-icons";
 
 export default function App() {
@@ -61,6 +61,25 @@ export default function App() {
                     <Image style={styles.cardImage} source={require('./catCard.png')} />
                 </View>
             </ScrollView>
+
+            
+                
+            </View>
+
+            <View style={styles.lastSection}>
+            <Text style={styles.ongoing}>Ongoing Tasks</Text>
+            <FlatList style={styles.Flatlist}
+                    data={[  
+                        {key: 'Android'},{key: 'iOS'}, {key: 'Java'},{key: 'Swift'},  
+                        {key: 'Php'},{key: 'Hadoop'},{key: 'Sap'},  
+                        {key: 'Python'},{key: 'Ajax'}, {key: 'C++'},  
+                        {key: 'Ruby'},{key: 'Rails'},{key: '.Net'},  
+                        {key: 'Perl'},{key: 'Sap'},{key: 'Python'},  
+                        {key: 'Ajax'}, {key: 'C++'},{key: 'Ruby'},  
+                        {key: 'Rails'},{key: '.Net'},{key: 'Perl'}  
+                    ]}  
+                    renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+      />  
 
       </View>
       
@@ -142,7 +161,37 @@ const styles = StyleSheet.create({
   cardImage: {
     marginLeft: 10,
     marginRight: 20,
+    marginBottom: 30,
   },
+
+  ongoing: {
+
+    fontWeight: 'bold',
+    fontSize: 17,
+    margin: 10,
+    marginLeft: 20,
+  },
+
+
+
+  item: {
+
+    paddingTop: 50,
+    paddingBottom: 50,
+    paddingLeft: 20,
+    fontSize: 16,
+    fontWeight: 'bold',
+    backgroundColor: '#FBF9F7',
+    marginLeft: 30,
+    marginRight: 30,
+    marginBottom: 15,
+    borderRadius: 10,
+    borderColor: "#E8D1BA",
+    borderWidth: 1,
+    
+  },
+
+
 
 
 });
