@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, ScrollView } from 'react-native';
 import { Feather } from "@expo/vector-icons";
 
 export default function App() {
@@ -26,6 +26,42 @@ export default function App() {
           placeholder="Search"
         />
       </View>
+      <Image style={styles.Filter} source={require('./Filter.png')}/>
+      </View>
+
+      <View style={styles.midSection}>
+      <Text style={styles.categoryText}>Categories</Text>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={styles.cardsSection}>
+                <View style={styles.card}>
+
+                    <Image style={styles.cardImage} source={require('./catCard.png')} />
+                    
+                </View>
+                <View style={styles.card}>
+                    <Image style={styles.cardImage} source={require('./catCard.png')} />
+                </View>
+                <View style={styles.card}>
+                    <Image style={styles.cardImage} source={require('./catCard.png')} />
+                </View>
+                <View style={styles.card}>
+                    <Image style={styles.cardImage} source={require('./catCard.png')} />
+                </View>
+                <View style={styles.card}>
+                    <Image style={styles.cardImage} source={require('./catCard.png')} />
+                </View>
+                <View style={styles.card}>
+                    <Image style={styles.cardImage} source={require('./catCard.png')} />
+                </View>
+                <View style={styles.card}>
+
+                    <Image style={styles.cardImage} source={require('./catCard.png')} />
+                </View>
+                <View style={styles.card}>
+
+                    <Image style={styles.cardImage} source={require('./catCard.png')} />
+                </View>
+            </ScrollView>
+
       </View>
       
       <StatusBar style="auto" />
@@ -83,11 +119,30 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
+  Filter: {
+    marginLeft: 32,
+
+  },
 
   input: {
     fontSize: 20,
     marginLeft: 10,
     width: "90%",
   },
+
+  categoryText: {
+
+    fontWeight: 'bold',
+    fontSize: 17,
+    margin: 10,
+    marginLeft: 20,
+
+},
+
+  cardImage: {
+    marginLeft: 10,
+    marginRight: 20,
+  },
+
 
 });
